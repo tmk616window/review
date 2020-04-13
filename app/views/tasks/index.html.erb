@@ -1,2 +1,54 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<div class="task_index">
+        <%@tasks.each do |t|%>
+　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<div class="container d-flex justify-content-center">
+    <div class='tasks_index '>
+        <a href="/tasks/<%=t.id%>"></a>
+    <div class="tasks_index_image">
+<canvas id="chart<%=t.id%>"></canvas>
+
+  <script>
+    var ctx = document.getElementById("chart<%=t.id%>");
+    var myRadarChart = new Chart(ctx, {
+        type: 'radar', 
+        data: { 
+            labels: ["デザイン", "機能", "コンセプト", "ユニーク性", "ユーザー視点"],
+            datasets: [{
+			    label: "ポートフォリオ分析",
+                data: [<%=t.id%>, 4, 1, 5, 4],
+                backgroundColor: 'rgba(255,0,0,0.5)',
+                borderColor: 'RGBA(225,95,150, 1)',
+                borderWidth: 1,
+            }, ]
+        },
+        options: {
+            scale:{
+                ticks:{
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    stepSize: 1,
+                }
+            }    
+        }
+    });
+  </script>
+        </div> 
+        <div class="tasks_index_form">
+        <p>入社状況　　　<%=t.job%></p>
+        <p>年齢　　　　　28歳</p>
+        <p>開発言語　　　php</p>
+        <p>勉強期間　　　6時間</p>
+        
+        </div>
+    </div>
+</div>
+
+<%end%>
+
+    
+</div>
+
+
+
+
+        
