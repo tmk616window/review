@@ -1,17 +1,17 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all.order(id: :desc)
-    gon.data = []
-    6.times do
-      gon.data << rand(100.0)
-    end
-    
   end
+    
   
   def new
   end
   
   def show
+    @task = Task.find(params[:id])
+    @like = Like.new
+    @likes = Like.where(task_id: params[:id])
+    @like_user = @likes.find_by(user_id: current_user.id)
   end
   
   def edit
