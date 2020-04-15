@@ -2,7 +2,6 @@
     <div class='show_tasks'>
 
         <%if !!@like_user.nil?%>
-
         <div class='like_button_create'>
             <%=form_with model: @like do |f|%>
             <%= f.hidden_field :user_id, value: current_user.id %>

@@ -1,0 +1,27 @@
+<h1>Details#show</h1>
+<p>Find me in app/views/details/show.html.erb</p>
+            
+
+                        
+        <% if current_user.id != @user.id%>
+                        
+        <%if !!@follow_user.nil?%>
+            <%=form_with model: @follow do |f|%>
+            <%= f.hidden_field :user_email, value: @user.email %>
+            <%= f.hidden_field :user_id, value: @user.id %>
+            <%= f.hidden_field :follower_id, value: current_user.id %>
+            <%=f.submit 'フォロー',class:'btn btn-primary'%>
+            <%end%>
+        <%else%>
+        <div class='like_button_destroy'>
+            <%=link_to 'フォロー解除' , "/follows/#{@follow_user.id}", method: :delete, class:'btn btn-primary'%>
+        </div>
+        <%end%>
+        <%else%>
+        <p></p>
+        <%end%>
+<p>フォローユーザー</p> 
+<%@follow_current_user.each do |f|%>
+<p><%=link_to f.user_email , detail_path(f.user_id)%></p>
+<%end%>
+
