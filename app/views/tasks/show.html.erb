@@ -1,6 +1,12 @@
 <div class='container'>
     <div class='show_tasks'>
-
+        <div class='show_tasks_button'>
+            
+        <div class="show_tasks_like ">
+        <div class='show_tasks_like_count'>
+        <p>いいね数：<%=@likes.count%></p>
+        </div>    
+        <div class='show_tasks_like_button'>
         <%if !!@like_user.nil?%>
         <div class='like_button_create'>
             <%=form_with model: @like do |f|%>
@@ -14,19 +20,132 @@
             <%=link_to 'いいね消去' , "/likes/#{@like_user.id}", method: :delete, class:'btn btn-primary'%>
         </div>
         <%end%>
+            
+        </div>
+        </div>
+        <p>ユーザー：email</p>
+        
+        <%=link_to '編集', '#' , class:'btn btn-primary show_tasks_edit_button'%>
+        </div>
+        <div class='show_tasks_chart'>
+　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<canvas id="chart<%=@task.id%>"></canvas>
 
+  <script>
+    var ctx = document.getElementById("chart<%=@task.id%>");
+    var myRadarChart = new Chart(ctx, {
+        type: 'radar', 
+        data: { 
+            labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点"],
+            datasets: [{
+			    label: "ポートフォリオ分析",
+                data: [<%=@task.id%>, 3, 1, 5, 4],
+                backgroundColor: 'rgba(255,0,0,0.5)',
+                borderColor: 'RGBA(225,95,150, 1)',
+                borderWidth: 1,
+            }, ]
+        },
+        options: {
+            scale:{
+                ticks:{
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    stepSize: 1,
+                }
+            }    
+        }
+    });
+  </script>
+        </div>
+        
+        <div class='show_tasks_table'>
+        <h3>ポートフォリオ分析</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>デザイン</th>
+            <td>テキストが入ります</td>
+        </tr>
+         <tr>
+            <th>機能</th>
+            <td>テキストが入ります</td>
+        </tr>
+         <tr>
+            <th>企画力</th>
+            <td>テキストが入ります</td>
+        </tr>
+        <tr>
+            <th>ユニーク性</th>
+            <td>テキストが入ります</td>
+        </tr>
+        <tr>
+            <th>ユーザー視点</th>
+            <td>テキストが入ります</td>
+        </tr>
+    </tbody>
+</table>
 
-    </div>    
+            
+            
+        </div>
+        
+        <div class='show_tasks_user'>
+            <h2>ユーザー情報</h2><p>email</p>
+<div class='show_tasks_table'>
+    
+<table>
+    <tbody>
+        <tr>
+            <th>採用状況</th>
+            <td>テキストが入ります</td>
+            
+            
+        </tr>
+        <tr>
+            <th>分野</th>
+            <td>テキストが入ります</td>
+            
+        </tr>
+        
+         <tr>
+            <th>年齢</th>
+            <td>テキストが入ります</td>
+        </tr>
+         <tr>
+            <th>開発言語</th>
+            <td>テキストが入ります</td>
+        </tr>
+        <tr>
+            <th>開発ツール</th>
+            <td>テキストが入ります</td>
+        </tr>
+        <tr>
+            <th>github url</th>
+            <td>テキストが入ります</td>
+        </tr>
+        <tr>
+            <th>作品概要</th>
+            <td>テキストが入ります</td>
+            
+        </tr>
+        <tr>
+            <th>開発ツール</th>
+            <td>テキストが入ります</td>
+            
+        </tr>
+        <tr>
+            <th>勉強期間</th>
+            <td>テキストが入ります</td>
+            
+        </tr>
+
+    </tbody>
+</table>
+</div>            
+                
+        </div>
+        <div class='show_tasks_coment'>
+            <h5>コメント</h5>
+        </div>
+    </div>
 </div>
-
-
-
-<p>いいね数：<%=@likes.count%></p>
-
-
-
-
-
-
-
-

@@ -5,14 +5,15 @@
     <div class='tasks_index '>
         <a href="/tasks/<%=t.id%>"></a>
     <div class="tasks_index_image">
-<canvas id="chart<%=t.id%>"></canvas>
+        
+        <canvas id="chart<%=t.id%>"></canvas>
 
   <script>
     var ctx = document.getElementById("chart<%=t.id%>");
     var myRadarChart = new Chart(ctx, {
         type: 'radar', 
         data: { 
-            labels: ["デザイン", "機能", "コンセプト", "ユニーク性", "ユーザー視点"],
+            labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点"],
             datasets: [{
 			    label: "ポートフォリオ分析",
                 data: [<%=t.id%>, 4, 1, 5, 4],
@@ -32,6 +33,8 @@
         }
     });
   </script>
+
+        
         </div> 
         <div class="tasks_index_form">
         <p>入社状況　　　<%=t.job%></p>

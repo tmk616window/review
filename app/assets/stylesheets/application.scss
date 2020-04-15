@@ -94,3 +94,68 @@ header{
     height:100%;
     width: 100%;
 }
+
+.show_tasks{
+    padding:20px 20px 20px 20px;
+    border: solid 1px black;
+    margin-bottom:60px;
+}
+
+.show_tasks_edit_button{
+}
+
+.show_tasks_like{
+    float:right;
+}
+
+
+.show_tasks_chart{
+    max-width:80%;
+    height: 500px;
+    border: solid 1px black;
+    margin: auto;
+    margin-top:50px;
+}
+
+.show_tasks_like_button{
+    display:inline;
+}
+
+.show_tasks_like_count{
+    display:inline;
+}
+
+.show_tasks_table{
+    padding-right:40px;
+    padding-left:40px;
+}
+
+.show_tasks_table table {
+    margin-top:50px;
+    border-collapse:  collapse; 
+    width:  100%;               
+}
+ 
+.show_tasks_table th {
+    width:  100px;              
+    text-align: left;
+    background-color:#EEEEEE;
+    border: solid 1px;         
+
+}
+ 
+ 
+.show_tasks_table td {
+    text-align: left;
+    border: solid 1px;         
+}
+
+.show_tasks_user{
+    margin-top:40px;
+}
+
+.show_tasks_coment{
+    margin-top: 40px;
+    background-color:#FFFFCC;
+    padding:10px 10px 100px 10px;
+}

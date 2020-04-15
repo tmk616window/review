@@ -1,10 +1,27 @@
-<h1>Details#show</h1>
-<p>Find me in app/views/details/show.html.erb</p>
-            
+<h1>プロフィール</h1>
+<div class='show_detail_profile'>
+<P>名前</P>
+<P>年齢</P>    
+<P>職歴</P>    
+<P>開発言語</P>    
+<P>コメント</P>  
+<%=@user.users_id%>
+<P></P>    
+<P></P>    
+<P></P>    
 
-                        
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class='shwow_detail_follow'>
+
         <% if current_user.id != @user.id%>
-                        
         <%if !!@follow_user.nil?%>
             <%=form_with model: @follow do |f|%>
             <%= f.hidden_field :user_email, value: @user.email %>
@@ -20,6 +37,9 @@
         <%else%>
         <p></p>
         <%end%>
+
+    
+</div>                        
 <p>フォローユーザー</p> 
 <%@follow_current_user.each do |f|%>
 <p><%=link_to f.user_email , detail_path(f.user_id)%></p>
