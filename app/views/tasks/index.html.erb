@@ -16,7 +16,7 @@
             labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点"],
             datasets: [{
 			    label: "ポートフォリオ分析",
-                data: [<%=t.id%>, 4, 1, 5, 4],
+                data: [<%=t.design_point%>, <%=t.function_point%>, <%=t.plan_point%>, <%=t.unique_point%>, <%=t.user_perspective_point%>],
                 backgroundColor: 'rgba(255,0,0,0.5)',
                 borderColor: 'RGBA(225,95,150, 1)',
                 borderWidth: 1,
@@ -37,11 +37,11 @@
         
         </div> 
         <div class="tasks_index_form">
-        <p>入社状況　　　<%=t.job%></p>
-        <p>年齢　　　　　28歳</p>
-        <p>開発言語　　　php</p>
-        <p>勉強期間　　　6時間</p>
-        
+        <p>入社方式　　　<%=t.recruit%></p>
+        <p>企業情報　　　<%=t.company_info%></p>
+        <p>年齢　　　　　<%=t.task_old%>歳</p>
+        <p>開発言語　　　<%=t.task_pl%></p>
+
         </div>
     </div>
 </div>

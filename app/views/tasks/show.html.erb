@@ -23,9 +23,9 @@
             
         </div>
         </div>
-        <p>ユーザー：email</p>
+        <p>ユーザー：<%=link_to @task.user_email , detail_path(@task.task_id)%></p>
         
-        <%=link_to '編集', '#' , class:'btn btn-primary show_tasks_edit_button'%>
+        <%=link_to '編集', edit_task_path(@task) , class:'btn btn-primary show_tasks_edit_button'%>
         </div>
         <div class='show_tasks_chart'>
 　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
@@ -39,7 +39,7 @@
             labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点"],
             datasets: [{
 			    label: "ポートフォリオ分析",
-                data: [<%=@task.id%>, 3, 1, 5, 4],
+                data: [<%=@task.design_point%>, <%=@task.function_point%>, <%=@task.plan_point%>, <%=@task.unique_point%>, <%=@task.user_perspective_point%>],
                 backgroundColor: 'rgba(255,0,0,0.5)',
                 borderColor: 'RGBA(225,95,150, 1)',
                 borderWidth: 1,
@@ -64,23 +64,23 @@
     <tbody>
         <tr>
             <th>デザイン</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.design%></td>
         </tr>
          <tr>
             <th>機能</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.function%></td>
         </tr>
          <tr>
             <th>企画力</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.plan%></td>
         </tr>
         <tr>
             <th>ユニーク性</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.unique%></td>
         </tr>
         <tr>
             <th>ユーザー視点</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.user_perspective%></td>
         </tr>
     </tbody>
 </table>
@@ -90,52 +90,50 @@
         </div>
         
         <div class='show_tasks_user'>
-            <h2>ユーザー情報</h2><p>email</p>
+            <h2>ユーザー情報</h2><%=link_to @task.user_email , detail_path(@task.task_id)%>
 <div class='show_tasks_table'>
     
 <table>
     <tbody>
         <tr>
-            <th>採用状況</th>
-            <td>テキストが入ります</td>
-            
-            
+            <th>採用方式</th>
+            <td><%=@task.recruit%></td>
         </tr>
         <tr>
+            <th>企業情報</th>
+            <td><%=@task.company_info%></td>
+        </tr>
+        
+        <tr>
             <th>分野</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.field%></td>
             
         </tr>
         
          <tr>
             <th>年齢</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.task_old%>歳</td>
         </tr>
          <tr>
             <th>開発言語</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.task_pl%></td>
         </tr>
         <tr>
             <th>開発ツール</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.task_tool%></td>
         </tr>
         <tr>
             <th>github url</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.github_url%></td>
         </tr>
         <tr>
             <th>作品概要</th>
-            <td>テキストが入ります</td>
-            
-        </tr>
-        <tr>
-            <th>開発ツール</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.work_explain%></td>
             
         </tr>
         <tr>
             <th>勉強期間</th>
-            <td>テキストが入ります</td>
+            <td><%=@task.study_period%>ヶ月</td>
             
         </tr>
 
@@ -146,6 +144,7 @@
         </div>
         <div class='show_tasks_coment'>
             <h5>コメント</h5>
+            <%=@task.task_coment%>
         </div>
     </div>
 </div>
