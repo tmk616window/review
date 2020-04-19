@@ -19,7 +19,10 @@
 
           <% if user_signed_in? %>
             <strong><%= link_to current_user.email, detail_path(current_user.id),class:'tasks_sub_button' %></strong>
-            <%= link_to '投稿', new_task_path,class:'tasks_sub_button' %>
+            <%= link_to 'ポートフォリオ一覧', tasks_path,class:'tasks_sub_button' %>
+            <%= link_to 'ポートフォリオ投稿', new_task_path,class:'tasks_sub_button' %>
+            <%= link_to 'イベント一覧', messages_path,class:'tasks_sub_button' %>
+            <%= link_to 'イベント主催', new_message_path,class:'tasks_sub_button' %>
             <%= link_to '登録変更', edit_user_registration_path,class:'tasks_sub_button' %>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class:'tasks_sub_button' %>
           <% else %>
@@ -34,6 +37,14 @@
       
     </div>
   </header>
+  
+      <div class="flash time-limit">
+
+      <% flash.each do |message_type, message|%>
+          <div class= "alert alert-<%=message_type%>"><%=message%></div>
+      <%end%>
+    </div>  
+
   
   <body>
     <p class="notice"><%= notice %></p>

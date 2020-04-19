@@ -3,6 +3,7 @@ class DetailsController < ApplicationController
   end
 
   def show
+    @posts = Post.where(post_id: current_user.id)
     @user = User.find(params[:id])
     @follow = Follow.new
     @follows = Follow.where(user_id: params[:id])

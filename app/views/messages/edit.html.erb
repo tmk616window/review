@@ -1,0 +1,23 @@
+<h1>イベント主催</h1>
+<%=form_with model: @message do |f|%>
+<%= f.hidden_field :message_id, value: current_user.id %>
+<p>イベント名</p>
+<%=f.text_field :name%>
+<p>画像</p>
+<%= f.file_field :image %>
+
+<p>内容</p>
+<%=f.text_field :content%>
+<p>日時</p>
+<%=f.text_field :date%>
+<p>場所</p>
+<%=f.text_field :message_place%>
+<p>人数</p>
+<%=f.text_field :people%>
+
+<p>コメント</p>
+<%=f.text_area :message_coment%>
+
+<br><br>
+<%=f.submit '投稿する'%>
+<%end%>
