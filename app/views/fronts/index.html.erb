@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+<div class='fornts_background-image'>
+<h1>未経験からエンジニアになりたいけど<br>ポートフォリオで何を作ればいいかわからない、、、</h1>
+</div>
+<div class='front-font'>
+    <h1>そんなあなたにおすすめです！！</h1>
+</div>
+<div class="front-review">
+    <h1>エンジニアにジョブチェンジした方のポートフォリオを参考にし、<br>どこに力を入れればよいのか、<br>どの程度作りこめばよいのかをあなたに教えます！！</h1>
+</div>
+
+<div class='front-chart'>
+    <h1>ポートフォリオの５項目を５段階評価を分析</h1>
+    　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+        <canvas id="chart"></canvas>
+
+  <script>
+    var ctx = document.getElementById("chart");
+    var myRadarChart = new Chart(ctx, {
+        type: 'radar', 
+        data: { 
+            labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点"],
+            datasets: [{
+			    label: "ポートフォリオ分析",
+                data: [3, 2, 4, 1,5],
+                backgroundColor: 'rgba(255,0,0,0.5)',
+                borderColor: 'RGBA(225,95,150, 1)',
+                borderWidth: 1,
+            }, ]
+        },
+        options: {
+            scale:{
+                ticks:{
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    stepSize: 1,
+                }
+            }    
+        }
+    });
+  </script>
+
+</div>
+
+<div class='front-event'>
+    <h1>勉強会などのイベントを主催したりイベントに参加することもできます！！<br>みんなでエンジニアにジョブチェンジをしよう！！</h1>
+    <%= link_to '新規登録', new_user_registration_path,class:'btn btn-primary form-control ' %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+      
+  </body>
+</html>

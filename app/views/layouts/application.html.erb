@@ -13,7 +13,11 @@
     <div class='container tasks_home'>
       <div class='row justify-content-between'>
         <div class='tasks_home_tab'>
+          <% if user_signed_in? %>
           <h1><%=link_to 'Enjob', '/tasks' ,class:'tasks_home_button'%></h1>
+          <%else%>
+          <h1><%=link_to 'Enjob', root_path ,class:'tasks_home_button'%></h1>
+          <%end%>
         </div>
         <div class='tasks_sub_tab'>
 
@@ -47,8 +51,6 @@
 
   
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     
     <%= yield %>

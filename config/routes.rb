@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  root to: 'fronts#index'
   get '/explain/:id' , to:'posts#explain'
   resources :'follows'
   resources :'details'
-  root 'tasks#index'
   resources :'likes'
   resources :'users',only:[:edit,:update]
   resources :'messages'
