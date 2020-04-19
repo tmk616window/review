@@ -2,9 +2,9 @@ class TasksController < ApplicationController
     before_action :authenticate_user!, {only: [:show]}
 
   
-  
   def index
     @tasks = Task.all.order(id: :desc)
+
   end
     
   def new
@@ -17,6 +17,12 @@ class TasksController < ApplicationController
     @like = Like.new
     @likes = Like.where(task_id: params[:id])
     @like_user = @likes.find_by(user_id: current_user.id)
+  end
+  
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_url
   end
   
   def edit

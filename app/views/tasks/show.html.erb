@@ -24,8 +24,12 @@
         </div>
         </div>
         <p>ユーザー：<%=link_to @task.user_email , detail_path(@task.task_id)%></p>
-        
+        <% if current_user.id == @task.task_id%>
         <%=link_to '編集', edit_task_path(@task) , class:'btn btn-primary show_tasks_edit_button'%>
+        <%=link_to '消去' , "/tasks/#{@task.id}", method: :delete, class:'btn btn-danger'%>
+        <%else%>
+        <p></p>
+        <%end%>
         </div>
         <div class='show_tasks_chart'>
 　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
