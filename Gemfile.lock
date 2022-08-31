@@ -110,7 +110,7 @@ GEM
       i18n (>= 0.7)
       multi_json
       request_store (>= 1.0)
-    hashie (4.1.0)
+    hashie (5.0.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     image_processing (1.10.3)
@@ -130,7 +130,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.4)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -149,13 +151,16 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
-    oauth (0.5.4)
-    omniauth (1.9.1)
+    oauth (0.6.2)
+      snaky_hash (~> 2.0)
+      version_gem (~> 1.1)
+    omniauth (2.1.0)
       hashie (>= 3.4.6)
-      rack (>= 1.6.2, < 3)
-    omniauth-oauth (1.1.0)
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-oauth (1.2.0)
       oauth
-      omniauth (~> 1.0)
+      omniauth (>= 1.0, < 3)
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
@@ -166,7 +171,9 @@ GEM
       nio4r (~> 2.0)
     puma (4.3.3-java)
       nio4r (~> 2.0)
-    rack (2.2.2)
+    rack (2.2.4)
+    rack-protection (2.2.2)
+      rack
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -228,6 +235,9 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    snaky_hash (2.0.0)
+      hashie
+      version_gem (~> 1.1)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -251,6 +261,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2019.3)
       tzinfo (>= 1.0.0)
+    version_gem (1.1.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.1)
